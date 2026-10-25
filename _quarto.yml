@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - 261026.qmd
+execute:
+  cache: true
+  echo: true
+bibliography: ref.bib
+csl: ieee.csl
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    scrollable: true
+    smaller: true
+    slide-number: true
+    include-after-body: video-fix.html

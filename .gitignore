@@ -1,0 +1,12 @@
+/.quarto/
+
+**/*.quarto_ipynb
+.DS_Store
+
+# Video files
+*.mov
+movs/
+docs/movs/
+
+# 지난 강의(충남대 260330) 것 — 이 저장소에는 안 올림
+/_지난강의_cnu260330/
