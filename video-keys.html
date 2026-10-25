@@ -1,0 +1,91 @@
+<script>
+// 영상 키 조작 — 충남대(260330) 것을 옮김. 영상을 한 번 누르면 «활성», 바깥을 누르면 풀림
+//   Space · 2 : 재생/멈춤   1 / 3 : 2초 뒤로/앞으로   ← / → : 1초 뒤로/앞으로 (대표 10-25 «+1초씩가는걸로하자»)
+//   활성인 동안 ↑ ↓ PageUp PageDown 은 슬라이드를 넘기지 않음
+//   충남대의 «모든 영상 2배속» 은 뺐다 — 1-4 는 2배속 파일, 전화로 쓰기는 원래 속도 (대표 10-25)
+document.addEventListener('DOMContentLoaded', function() {
+  const videos = document.querySelectorAll('video');
+  let activeVideo = null;
+
+  videos.forEach(video => {
+    video.addEventListener('click', function(e) {
+      if (activeVideo && activeVideo !== this) {
+        activeVideo.classList.remove('video-active');
+      }
+      this.classList.add('video-active');
+      activeVideo = this;
+      e.stopPropagation();
+    });
+  });
+
+  function seek(v, sec) {
+    v.currentTime = Math.min(v.duration || Infinity, Math.max(0, v.currentTime + sec));
+  }
+  function toggle(v) {
+    if (v.paused) { v.play(); } else { v.pause(); }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === ' ' || e.keyCode === 32) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      if (activeVideo) toggle(activeVideo);
+      return false;
+    }
+
+    if (!activeVideo) return;
+
+    let handled = true;
+    switch (e.key) {
+      case '1': seek(activeVideo, -2); break;
+      case '3': seek(activeVideo, 2); break;
+      case '2': toggle(activeVideo); break;
+      case 'ArrowLeft': seek(activeVideo, -1); break;
+      case 'ArrowRight': seek(activeVideo, 1); break;
+      case 'ArrowUp':
+      case 'ArrowDown':
+      case 'PageUp':
+      case 'PageDown':
+        break;
+      default:
+        handled = false;
+    }
+
+    if (handled) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      return false;
+    }
+  }, true);
+
+  // 문서 클릭시 비활성화
+  document.addEventListener('click', function(e) {
+    if (activeVideo && !e.target.closest('video')) {
+      activeVideo.classList.remove('video-active');
+      activeVideo = null;
+    }
+  });
+
+  // 탭을 바꾸면 그 탭셋 안의 영상은 멈춘다
+  document.querySelectorAll('.panel-tabset').forEach(ts => {
+    ts.addEventListener('click', function(e) {
+      if (!e.target.closest('.panel-tabset-tabby a, [role="tab"]')) return;
+      ts.querySelectorAll('video').forEach(v => v.pause());
+      if (activeVideo && ts.contains(activeVideo)) {
+        activeVideo.classList.remove('video-active');
+        activeVideo = null;
+      }
+    });
+  });
+});
+</script>
+<style>
+video.video-active,
+iframe.video-active {
+  outline: 3px solid #4A90E2;
+  outline-offset: 2px;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+</style>

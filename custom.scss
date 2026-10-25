@@ -120,3 +120,115 @@ table.dataframe {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+/* 촬영 영상(로컬 mp4) — 가운데 · 슬라이드 안에 들어가게 */
+.reveal section video.lecvid {
+  /* 높이만 정하고 폭은 영상 비율대로 — 상자가 영상보다 넓으면 아래 조작 띠의 검은 그늘이 양옆까지 번진다 (대표 10-25 «아래쪽에 검게보이는거») */
+  display: block;
+  margin: 0 auto;
+  height: 520px;
+  width: auto;
+  max-width: 100%;
+}
+
+
+/* 한글은 낱자 말고 띄어쓰기에서 줄을 바꾼다 — 제목 끝 «례» 한 자만 떨어지던 것 (대표 10-25) */
+.reveal {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 영상 탭 — 한 줄에 다 들어가게 작게 (대표 10-25 «이러니까 뭔가 보기싫은데») */
+.reveal .panel-tabset .panel-tabset-tabby {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.reveal .panel-tabset .panel-tabset-tabby li a,
+.reveal .panel-tabset [role="tab"] {
+  font-size: 0.55em;
+  padding: 0.35em 0.9em;
+  white-space: nowrap;
+}
+
+/* 영상 한 편 슬라이드도 탭 «영상» 을 보인다 — 숨기던 규칙은 뺐다 (대표 10-26 «탭에 영상이라고 넣어») */
+
+/* 재생 막대 뒤 검은 그늘(크롬 기본) 없앰 — 대표 10-25 «밑에 이거 검게보이는거 … 이거해결못해?» */
+.reveal video.lecvid::-webkit-media-controls-panel {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+.reveal video.lecvid::-webkit-media-controls-enclosure {
+  background: transparent !important;
+}
+
+/* 줄이 많은 표 — 글씨를 줄여 한 화면에 */
+.reveal .tight table { font-size: 0.56em; }
+.reveal .tight table td, .reveal .tight table th { padding: 0.25em 0.5em; }
+/* 목록은 글씨를 줄이지 않는다 — 글자는 아래에서 23px 로 묶이는데 목록 칸만 0.68em 으로 줄면 번호가 왼쪽에서 잘린다 (대표 10-26 «왜 1,2,3 이런게 짤려보이지») */
+.reveal .tight li { margin-bottom: 0.15em; }
+
+/* 글자 크기 하나로 — 본문 · 목록 · 표 · 탭 모두 같은 크기(중간). 제목과 첫 장은 그대로 (대표 10-25 «전체적으로 글자크기는 통일») */
+.reveal .slides section:not(#title-slide) p,
+.reveal .slides section:not(#title-slide) li,
+.reveal .slides section:not(#title-slide) td,
+.reveal .slides section:not(#title-slide) th,
+.reveal .slides section .panel-tabset .panel-tabset-tabby li a,
+.reveal .slides section .panel-tabset [role="tab"] {
+  font-size: 23px !important;
+}
+.reveal .slides section:not(#title-slide) pre code {
+  font-size: 18px !important;
+}
+
+/* 장면 탭 — 글자 대신 네모. 지금 장면까지 꽉 찬 네모 ■, 남은 장면은 빈 네모 □ (대표 10-25) */
+.reveal .slides section .panel-tabset .panel-tabset-tabby li a:has(.sq) {
+  font-size: 0 !important;
+  padding: 4px 7px !important;  /* 글자 크기가 0 이라 em 은 0 이 된다 — px 로 */
+  border: none !important;
+  background: transparent !important;
+}
+.reveal .slides section .panel-tabset .panel-tabset-tabby li a:has(.sq)::before {
+  content: "□";
+  font-size: 24px;
+}
+/* :has() 안에 :has() 를 넣으면 규칙 전체가 버려진다 — 둘로 나눈다 */
+.reveal .slides section .panel-tabset .panel-tabset-tabby li a[aria-selected="true"]:has(.sq)::before {
+  content: "■";
+}
+.reveal .slides section .panel-tabset .panel-tabset-tabby li:has(~ li > a[aria-selected="true"]) > a:has(.sq)::before {
+  content: "■";
+}
+
+/* 앱 캡처 한 장 — 영상과 같은 높이 */
+.reveal section img.lecimg {
+  display: block;
+  margin: 0 auto;
+  max-height: 520px;
+  max-width: 100%;
+  width: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* pdf 보기(작업물 예시) — 영상과 같은 자리 · 같은 높이 */
+.reveal section iframe.lecpdf {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ddd;
+}
+
+/* 목차 — 크게 · 줄 사이 넉넉히 (대표 10-26 «글씨는 좀더 크게 · 너무 비어보여») · 아래 단계는 점(-) */
+.reveal .slides section:not(#title-slide) .toc-big li { font-size: 36px !important; line-height: 1.55; }
+.reveal .slides section:not(#title-slide) .toc-big li li { font-size: 30px !important; line-height: 1.45; }
+.reveal .toc-big > ol { margin-top: 0.6em; padding-left: 1.8em; }   /* 번호가 왼쪽에서 잘리지 않게 */
+
+/* 맺음말 — 마무리 멘트는 가운데 · 조금 크게 (대표 10-26 «마무리멘트니까») */
+.reveal .closing { text-align: center; margin-top: 150px; }
+.reveal .slides section:not(#title-slide) .closing p { font-size: 32px !important; line-height: 1.7; margin: 0 0 1em; }
+
+/* 사례 3 — 앱 넷을 한 화면에 2×2 (대표 10-26 «여러가지앱들 그냥 한 화면에 담고싶어») */
+.reveal .appgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-top: 10px; }
+.reveal .appgrid .app p { margin: 0 0 6px; text-align: left; }
+.reveal .appgrid .app img { display: block; width: 100%; height: 215px; object-fit: cover; object-position: left top; border: 1px solid #ddd; border-radius: 8px; margin: 0; }
+.reveal .appgrid .app { display: flex; flex-direction: column; }
+.reveal .appgrid .app > p:last-child { margin-top: auto; margin-bottom: 0; }   /* 설명이 두 줄이 돼도 같은 줄의 그림은 아래로 맞춤 */
