@@ -429,7 +429,7 @@ title-block-banner: true
 
 ::: {.closing}
 
-감사합니다. 
+들어주셔서 감사합니다.
 
 :::
 
