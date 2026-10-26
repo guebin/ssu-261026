@@ -9,6 +9,7 @@ use strict; use warnings; use utf8;
 use Encode qw(decode_utf8 encode_utf8);
 use Unicode::Normalize qw(NFC);
 binmode STDOUT, ':utf8';
+binmode STDERR, ':utf8';
 
 my $in  = 'docs/261026.html';
 my $out = 'docs/261026-web.html';
