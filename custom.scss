@@ -222,9 +222,9 @@ table.dataframe {
 .reveal .slides section:not(#title-slide) .toc-big li li { font-size: 30px !important; line-height: 1.45; }
 .reveal .toc-big > ol { margin-top: 0.6em; padding-left: 1.8em; }   /* 번호가 왼쪽에서 잘리지 않게 */
 
-/* 맺음말 — 마무리 멘트는 가운데 · 조금 크게 (대표 10-26 «마무리멘트니까») */
-.reveal .closing { text-align: center; margin-top: 150px; }
-.reveal .slides section:not(#title-slide) .closing p { font-size: 32px !important; line-height: 1.7; margin: 0 0 1em; }
+/* 맺음말 — 마무리 멘트는 가운데 · 조금 크게 (대표 10-26 «마무리멘트니까») · «감사합니다 좀더 크게» 64px */
+.reveal .closing { text-align: center; margin-top: 200px; }
+.reveal .slides section:not(#title-slide) .closing p { font-size: 64px !important; line-height: 1.7; margin: 0 0 1em; }
 
 /* 사례 3 — 앱 넷을 한 화면에 2×2 (대표 10-26 «여러가지앱들 그냥 한 화면에 담고싶어») */
 .reveal .appgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-top: 10px; }
