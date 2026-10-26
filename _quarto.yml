@@ -3,6 +3,8 @@ project:
   output-dir: docs
   render:
     - 261026.qmd
+  resources:
+    - 예제파일/   # 예제1 내려받기 — 슬라이드는 절대주소로 걸어서 quarto 가 스스로 복사하지 않는다
 execute:
   cache: true
   echo: true

@@ -86,6 +86,9 @@ print $o $html;
 close $o;
 print "$out — 유튜브 $nv · 추후 업로드 $nt · 링크 $nl · PDF 뺌 $np\n";
 
+# 예제1 내려받기 zip — 슬라이드가 절대주소로 걸어서 quarto 가 docs 로 복사하지 않고 지우기까지 한다(10-26)
+system("rsync", "-a", "예제파일/", "docs/예제파일/") == 0 or die "예제파일 복사 실패\n";
+
 # 첫 주소(…/ssu-261026-/)는 게시용으로 — quarto 가 만드는 index.html 은 강의용을 가리키므로 덮어쓴다
 open my $ix, '>:utf8', 'docs/index.html' or die "docs/index.html: $!";
 print $ix qq{<!doctype html>\n<html><head><meta charset="utf-8"><title>강의노트</title>\n<meta http-equiv="refresh" content="0;URL='261026-web.html'" /></head><body></body></html>\n};
