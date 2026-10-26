@@ -429,6 +429,8 @@ title-block-banner: true
 
 ---
 
+### FAQ
+
 ::: {.toc-big}
 1. 클로드 코드 vs 코덱스
 2. 구독료
@@ -439,7 +441,7 @@ title-block-banner: true
 
 ::: {.closing}
 
-들어주셔서 감사합니다.
+감사합니다.
 
 :::
 
