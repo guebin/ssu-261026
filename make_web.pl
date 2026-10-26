@@ -40,10 +40,11 @@ $html =~ s{<video class="lecvid"[^>]*?\ssrc="([^"]+)"[^>]*>\s*</video>}{
     $nv++;
     qq{<iframe class="lecyt" data-src="https://www.youtube.com/embed/$id?rel=0&amp;enablejsapi=1" }
     . qq{allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>};
-  } elsif ($k =~ /^2-3 .*TAKE[23]_/) {
+  } else {   # 아직 안 올린 영상 — 자리만 둔다 (10-26 2-3 TAKE3 · 농진청 여비 신청처럼 업로드를 기다리는 것)
     $nt++;
+    print STDERR "유튜브 짝 없음(추후 업로드 자리): $k\n";
     qq{<div class="lecyt-todo">이 영상은 추후 올릴 예정입니다.</div>};
-  } else { die "유튜브 짝 없음: $k\n" }
+  }
 }ge;
 
 $html =~ s{href="([^"]+\.mp4)"}{

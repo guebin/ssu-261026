@@ -281,7 +281,7 @@ title-block-banner: true
 
 ---
 
-### 예제1: 출장 신청 · 여비 신청
+### 예제1: 여비 신청 (숭실대)
 
 ::: {.panel-tabset}
 
@@ -322,7 +322,19 @@ title-block-banner: true
 
 ---
 
-### 예제2: 연구비 카드 처리
+### 예제2: 여비 신청 (농진청)
+
+::: {.panel-tabset}
+
+#### 영상
+
+<video class="lecvid" controls preload="metadata" src="../../%EC%97%90%EC%9D%B4%EC%A0%84%ED%8B%B1%EC%BD%94%EB%94%A9%EC%B4%AC%EC%98%81%EC%98%81%EC%83%81/4-1%20%EB%86%8D%EC%A7%84%EC%B2%AD%EC%B6%9C%EC%9E%A5%20%EC%97%AC%EB%B9%84%EC%8B%A0%EC%B2%AD_%EA%B9%8C%EC%B9%98%28%EC%99%84%29/%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EC%97%90%EA%B2%8C_%EB%86%8D%EC%A7%84%EC%B2%AD%EC%B6%9C%EC%9E%A5%EC%97%AC%EB%B9%84%EC%8B%A0%EC%B2%AD_%EB%A7%A1%EA%B8%B0%EA%B8%B0_%EC%8B%A4%EC%88%98%EC%88%98%EC%A0%95%ED%8F%AC%ED%95%A8.mp4"></video>
+
+:::
+
+---
+
+### 예제3: 연구비 카드 처리
 
 ::: {.panel-tabset}
 
@@ -335,7 +347,7 @@ title-block-banner: true
 
 ---
 
-### 예제3: 학생 상담 입력
+### 예제4: 학생 상담 입력
 
 ::: {.panel-tabset}
 
@@ -359,7 +371,7 @@ title-block-banner: true
 
 ---
 
-### 예제4: 교육 수강
+### 예제5: 교육 수강
 
 ::: {.panel-tabset}
 
