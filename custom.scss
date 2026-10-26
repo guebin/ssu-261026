@@ -232,3 +232,5 @@ table.dataframe {
 .reveal .appgrid .app img { display: block; width: 100%; height: 215px; object-fit: cover; object-position: left top; border: 1px solid #ddd; border-radius: 8px; margin: 0; }
 .reveal .appgrid .app { display: flex; flex-direction: column; }
 .reveal .appgrid .app > p:last-child { margin-top: auto; margin-bottom: 0; }   /* 설명이 두 줄이 돼도 같은 줄의 그림은 아래로 맞춤 */
+/* 맥엠 그림은 자르지 않고 통째로 — 위만 보이면 터미널이 잘린다 (대표 10-26 «폴더와 터미널이 한번에 보이지도 않어») */
+.reveal .appgrid .app img.fit { width: auto; max-width: 100%; object-fit: contain; }

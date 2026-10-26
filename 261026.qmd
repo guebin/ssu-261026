@@ -402,23 +402,23 @@ title-block-banner: true
 ::: {.app}
 **App1: 맥엠** — 폴더와 터미널을 한 창에
 
-![](figs/app_macm.png)
+![](figs/app_macm_all.png){.fit}
 :::
 
 ::: {.app}
-**App2: 백호 · 까투리** — 에이전트와 대화하는 펫 ([영상](../../%EC%97%90%EC%9D%B4%EC%A0%84%ED%8B%B1%EC%BD%94%EB%94%A9%EC%B4%AC%EC%98%81%EC%98%81%EC%83%81/5-2%20%ED%94%84%EB%A6%B0%ED%84%B0%EC%88%98%EB%A6%AC_%EB%B0%B1%ED%98%B8%28%EC%99%84%29/5-2_%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EC%97%90%EA%B2%8C_%ED%94%84%EB%A6%B0%ED%84%B0%EC%88%98%EB%A6%AC_%EB%A7%A1%EA%B8%B0%EA%B8%B0.mp4){target="_blank"})
+**App2: 백호 · 까투리** — 에이전트에게 일 맡기는 비서 앱 ([영상](../../%EC%97%90%EC%9D%B4%EC%A0%84%ED%8B%B1%EC%BD%94%EB%94%A9%EC%B4%AC%EC%98%81%EC%98%81%EC%83%81/5-2%20%ED%94%84%EB%A6%B0%ED%84%B0%EC%88%98%EB%A6%AC_%EB%B0%B1%ED%98%B8%28%EC%99%84%29/5-2_%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EC%97%90%EA%B2%8C_%ED%94%84%EB%A6%B0%ED%84%B0%EC%88%98%EB%A6%AC_%EB%A7%A1%EA%B8%B0%EA%B8%B0.mp4){target="_blank"})
 
 ![](figs/app_baekho.png)
 :::
 
 ::: {.app}
-**App3: 푸름 · 이슬** — qmd 편집기
+**App3: 푸름 · 이슬** — md 편집기
 
 ![](figs/app_pureum.png)
 :::
 
 ::: {.app}
-**App4: 잉크 · 투명잉크** — 화면 위에 펜으로 쓰기
+**App4: 잉크 · 투명잉크** — 그림판(맥용) · 강의용 필기 앱
 
 ![](figs/app_clearink.png)
 :::
